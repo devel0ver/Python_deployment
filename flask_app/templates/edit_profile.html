@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/home.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+    <title>Home • PlanIt</title>
+</head>
+
+<body style="background: linear-gradient(45deg,#6ac1c5,#bda5ff); ">
+    <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 bg-light fixed-top">
+        <a href="/home_page" class="navbar-brand" style="font-family: 'Neonderthaw', cursive;">Plan.It</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <section class="mt-5 des">
+        <section class="container mt-5">
+            <form action="/home_page/profile/update" method="post" style="margin-top: 100px;">
+                <div class="mt-3 mb-3" style="background-color: #2c3a47; width: 50%;margin: auto;">
+                    {% with messages = get_flashed_messages() %}
+                    <!-- declare a variable called messages -->
+                    {% if messages %}
+                    <!-- check if there are any messages -->
+                    {% for message in messages %}
+                    <!-- loop through the messages -->
+                    <p class="text-danger text-center">{{message}}</p> <!-- display each message in a paragraph tag -->
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                    <div class="mb-3 col-8 m-auto">
+                        <label for="f_name" class="text-light form-label mt-3">First Name:</label>
+                        <input type="text" class="form-control" id="f_name" name="first_name" value="{{user.first_name}}">
+                    </div>
+                    <div class="mb-3 col-8 m-auto">
+                        <label for="l_name" class="text-light form-label">Last Name:</label>
+                        <input type="text" class="form-control" id="l_name" name="last_name" value="{{user.last_name}}">
+                    </div>
+                    <div class="mb-3 col-8 m-auto">
+                        <label for="user_name" class="text-light form-label">User Name:</label>
+                        <input type="text" class="form-control" id="user_name" name="user_name" value="{{user.user_name}}">
+                    </div>
+                    <div class="mb-3 col-8 m-auto">
+                        <label for="email" class="text-light form-label">Email address:</label>
+                        <input type="text" class="form-control" id="email" name="email" value="{{user.email}}">
+                    </div>
+                    <div class="mb-3 col-8 m-auto">
+                        <label for="password" class="text-light form-label">Old Password:</label>
+                        <input type="password" class="form-control" id="password" name="old_password">
+                    </div>
+                    <div class="mb-3 col-8 m-auto">
+                        <label for="confirm" class="text-light form-label">New Password:</label>
+                        <input type="password" class="form-control" id="confirm" name="password">
+                        <input type="submit" class="btn btn-success w-100 mt-3 mb-3" value="Update Profile">
+                        <div class="d-flex justify-content-between">
+                            <a href="/home_page/profile" class="btn btn-secondary mb-3">Cancel</a>
+                            <a href="/home_page/profile/delete/{{user.id}}" class="btn btn-danger mb-3">Delete Account</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </section>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</html>

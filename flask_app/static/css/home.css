@@ -1,0 +1,138 @@
+.gear {
+    content: "\2699";
+    position: absolute;
+    top: -25px;
+    left: 180px;
+    font-size: 40px;
+    float: right;
+    color: black;
+}
+.des{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg,#6ac1c5,#bda5ff);
+}
+.box-container{
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+    width: 300px;
+    height: 42px;
+    border: 4px solid #2980b9;
+    padding: 0px 10px;
+    border-radius: 50px;
+}
+.elements{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+.search{
+    border: none;
+    height: 100%;
+    width: 100%;
+    padding: 0px 5px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-family: "Nunito";
+    color: #424242;
+    font-weight: 500;
+}
+.search:focus{
+    outline: none;
+}
+.fa-search{
+    font-size: 26;
+    color: #2980b9;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Ubuntu", sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.profile-card{
+    width: 400px;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.card-header{
+    background: #2c3a47;
+    padding: 60px 40px;
+}
+.pic{
+    display: inline-block;
+    padding: 8px;
+    background: linear-gradient(130deg, #74b9ff, #e66767);
+    margin: auto;
+    border-radius: 50%;
+}
+.pic img{
+    display: block;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+.name{
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+.user_name{
+    color: white;
+}
+.card-footer{
+    background: #f4f4f4;
+    padding: 45px 10px;
+}
+.numbers{
+    display: flex;
+    align-items: center;
+}
+.item{
+    flex: 1;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #e66767;
+}
+.item span{
+    display: block;
+    color: #2c3a47;
+    font-size: 30px;
+}
+.border{
+    width: 1px;
+    height: 50px;
+    background: #bbb;
+}
+
+.my-friends-container {
+    max-width: 350px; /* Adjust width as needed */
+    margin-top: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    overflow-y: auto; /* Enable scrolling if the list is long */
+}
+
+.section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+.list-group-item {
+    border: 1px solid #ddd;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+}
+
+.btn-outline-danger {
+    color: #dc3545; /* Bootstrap danger color */
+}

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+    <title>SignUp • PlanIt</title>
+</head>
+
+<body>
+    <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+        <a href="/register" class="navbar-brand" style="font-family: 'Neonderthaw', cursive;">Plan.It</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <section class="container-fluid px-0">
+        <div class="row align-items-center">
+            <div class="col-lg-12 px-0">
+                <img class="img-fluid w-100" src="static/img/all_over.jpg" alt="Travel_pic">
+                <img class="img-fluid plane-line" src="static/img/plane-line.png" alt="Travel_pic">
+                <img class="img-fluid plane-symbol" src="static/img/airplane.png" alt="Travel_pic">
+                <img class="img-fluid w-25 fancy-line" src="static/img/line.png" alt="Travel_pic">
+                <h1 class="line" style="font-size: 150px; font-family: 'Tangerine', cursive;">Plan.It</h1>
+                <form action="/new_account" method="post" class="reg-form">
+                    <div class="bg-light mt-3 mb-3">
+                        {% with messages = get_flashed_messages() %}
+                        <!-- declare a variable called messages -->
+                        {% if messages %}
+                        <!-- check if there are any messages -->
+                        {% for message in messages %}
+                        <!-- loop through the messages -->
+                        <p class="text-danger text-center">{{message}}</p> <!-- display each message in a paragraph tag -->
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                        <div class="mb-3 col-12">
+                            <label for="f_name" class="form-label mt-3">First Name:</label>
+                            <input type="text" class="form-control" id="f_name" name="first_name">
+                        </div>
+                        <div class="mb-3 col-12">
+                            <label for="l_name" class="form-label">Last Name:</label>
+                            <input type="text" class="form-control" id="l_name" name="last_name">
+                        </div>
+                        <div class="mb-3 col-12">
+                            <label for="user_name" class="form-label">User Name:</label>
+                            <input type="text" class="form-control" id="user_name" name="user_name">
+                        </div>
+                        <div class="mb-3 col-12">
+                            <label for="email" class="form-label">Email address:</label>
+                            <input type="text" class="form-control" id="email" name="email">
+                        </div>
+                        <div class="mb-3 col-12">
+                            <label for="password" class="form-label">Password:</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                        <div class="mb-3 col-12">
+                            <label for="confirm" class="form-label">Confirm Password:</label>
+                            <input type="password" class="form-control" id="confirm" name="conf_pass">
+                            <input type="submit" class="btn btn-primary w-100 mt-3 mb-3" value="Sign up">
+                        </div>
+                    </div>
+                    <div class="mt-3 bg-light p-3 text-center">
+                        <p>Have an account? <a href="/">Log In</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script src="static/js/script.js"></script>
+</body>
+
+</html>

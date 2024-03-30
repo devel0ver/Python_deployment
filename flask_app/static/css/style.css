@@ -1,0 +1,104 @@
+body {
+    background: #dbdbdb;
+    font-family: "Nunito", sans-serif;
+}
+#mainNavbar {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+#mainNavbar .navbar-brand {
+    color: #000000;
+    font-size: 30px;
+}             
+#mainNavbar .nav-link {
+    color: rgb(255, 255, 255);
+}                                        
+#mainNavbar .nav-link:hover {
+    color: #454352;
+}
+
+.line{
+    color: rgba(24, 24, 24, 0.952);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.form{
+    width: 25%;
+    position: absolute;
+    top: 35%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+}
+.reg-form{
+    width: 25%;
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+}
+.hr{
+    margin: 12px 5px;
+    width: 150px;
+    border-top: 0.5px solid black;
+}
+
+.fancy-line{
+    color: black;
+    position: absolute;
+    top: 38%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+}
+.plane-symbol{
+    width: 30px;
+    position: absolute;
+    top: 28.6%;
+    left: 66.9%;
+    transform: translate(-50%, -50%);
+}
+.plane-line{
+    width: 80px;
+    position: absolute;
+    top: 29.6%;
+    left: 63.5%;
+    transform: translate(-50%, -50%);
+}
+
+#headingGroup span {
+    color: #ea1c2c;
+}
+#headingGroup h1 {
+    font-size: 4rem;
+    font-weight: 100; 
+}
+
+.holder h2 {
+    color: #ea1c2c;
+    font-weight: 100;
+    font-size: 2.5rem;
+}
+.holder p {
+    color: #1d1d1d;
+    font-weight: 100;
+    font-size: 1.13rem;
+    line-height: 2;
+}
+
+.content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.navbar.scrolled {
+    background: #676577;
+    transition: background 1s;
+}
+
+@media (max-width: 1200px) {
+    #headingGroup h1 {
+        font-size: 3rem;
+        font-weight: 100; 
+    }
+}

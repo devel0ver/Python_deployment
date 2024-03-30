@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+    <title>Login • PlanIt</title>
+</head>
+
+<body>
+    <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
+        <a href="/" class="navbar-brand" style="font-family: 'Neonderthaw', cursive;">Plan.It</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navLinks">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="/about" class="nav-link">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="container-fluid px-0">
+        <div class="row align-items-center">
+            <div class="col-lg-12 px-0">
+                <img class="img-fluid w-100" src="static/img/all_over.jpg" alt="Travel_pic">
+                <img class="img-fluid plane-line" src="static/img/plane-line.png" alt="Travel_pic">
+                <img class="img-fluid plane-symbol" src="static/img/airplane.png" alt="Travel_pic">
+                <img class="img-fluid w-25 fancy-line" src="static/img/line.png" alt="Travel_pic">
+                <h1 class="line" style="font-size: 150px; font-family: 'Tangerine', cursive;">Plan.It</h1>
+                <form action="/login" method="post" class="form">
+                    {% with messages = get_flashed_messages() %}
+                    <!-- declare a variable called messages -->
+                    {% if messages %}
+                    <!-- check if there are any messages -->
+                    {% for message in messages %}
+                    <!-- loop through the messages -->
+                    <p class="text-danger text-center">{{message}}</p> <!-- display each message in a paragraph tag -->
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                    <div class="mb-3 col-12">
+                        <label for="email" class="form-label">Email address:</label>
+                        <input type="text" class="form-control" id="email" name="email">
+                    </div>
+                    <div class="mb-3 col-12">
+                        <label for="password" class="form-label ">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                        <input type="submit" class="btn btn-primary w-100 mt-3 mb-1" value="Log In">
+                        <div class="text-center">
+                            <a href="/forgot">Forgot password?</a>
+                        </div>
+                        <div class="d-flex">
+                            <p class="hr"></p>
+                            <p>or</p>
+                            <p class="hr"></p>
+                        </div>
+                        <div class="text-center">
+                            <a href="/register" class="btn btn-success btn-sm">Create new account</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
